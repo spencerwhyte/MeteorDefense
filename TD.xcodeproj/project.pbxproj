@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F398184213061714004A1763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184113061714004A1763 /* UIKit.framework */; };
+		F398184413061714004A1763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184313061714004A1763 /* Foundation.framework */; };
+		F398184613061714004A1763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184513061714004A1763 /* CoreGraphics.framework */; };
+		F398184813061714004A1763 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184713061714004A1763 /* QuartzCore.framework */; };
+		F398184A13061714004A1763 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184913061714004A1763 /* OpenGLES.framework */; };
+		F398185013061714004A1763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F398184E13061714004A1763 /* InfoPlist.strings */; };
+		F398185313061714004A1763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F398185213061714004A1763 /* main.m */; };
+		F398185613061714004A1763 /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F398185513061714004A1763 /* TDAppDelegate.m */; };
+		F398185913061714004A1763 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F398185713061714004A1763 /* MainWindow.xib */; };
+		F398185B13061714004A1763 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F398185A13061714004A1763 /* Shader.fsh */; };
+		F398185D13061714004A1763 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F398185C13061714004A1763 /* Shader.vsh */; };
+		F398186013061714004A1763 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = F398185F13061714004A1763 /* EAGLView.m */; };
+		F398186313061714004A1763 /* TDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F398186213061714004A1763 /* TDViewController.m */; };
+		F398186613061714004A1763 /* TDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F398186413061714004A1763 /* TDViewController.xib */; };
+		F398186D13061714004A1763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184113061714004A1763 /* UIKit.framework */; };
+		F398186E13061714004A1763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184313061714004A1763 /* Foundation.framework */; };
+		F398186F13061714004A1763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F398184513061714004A1763 /* CoreGraphics.framework */; };
+		F398187513061714004A1763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F398187313061714004A1763 /* InfoPlist.strings */; };
+		F398187813061714004A1763 /* TDTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F398187713061714004A1763 /* TDTests.h */; };
+		F398187A13061714004A1763 /* TDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F398187913061714004A1763 /* TDTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F398183D13061714004A1763 /* TD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F398184113061714004A1763 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F398184313061714004A1763 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F398184513061714004A1763 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F398184713061714004A1763 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F398184913061714004A1763 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F398184D13061714004A1763 /* TD-Info.plist */ = {isa = PBXFileReference; path = "TD-Info.plist"; sourceTree = "<group>"; };
+		F398184F13061714004A1763 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F398185113061714004A1763 /* TD-Prefix.pch */ = {isa = PBXFileReference; path = "TD-Prefix.pch"; sourceTree = "<group>"; };
+		F398185213061714004A1763 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F398185413061714004A1763 /* TDAppDelegate.h */ = {isa = PBXFileReference; path = TDAppDelegate.h; sourceTree = "<group>"; };
+		F398185513061714004A1763 /* TDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAppDelegate.m; sourceTree = "<group>"; };
+		F398185813061714004A1763 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F398185A13061714004A1763 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		F398185C13061714004A1763 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		F398185E13061714004A1763 /* EAGLView.h */ = {isa = PBXFileReference; path = EAGLView.h; sourceTree = "<group>"; };
+		F398185F13061714004A1763 /* EAGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		F398186113061714004A1763 /* TDViewController.h */ = {isa = PBXFileReference; path = TDViewController.h; sourceTree = "<group>"; };
+		F398186213061714004A1763 /* TDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDViewController.m; sourceTree = "<group>"; };
+		F398186513061714004A1763 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDViewController.xib; sourceTree = "<group>"; };
+		F398186C13061714004A1763 /* TDTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F398187213061714004A1763 /* TDTests-Info.plist */ = {isa = PBXFileReference; path = "TDTests-Info.plist"; sourceTree = "<group>"; };
+		F398187413061714004A1763 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F398187613061714004A1763 /* TDTests-Prefix.pch */ = {isa = PBXFileReference; path = "TDTests-Prefix.pch"; sourceTree = "<group>"; };
+		F398187713061714004A1763 /* TDTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDTests.h; sourceTree = "<group>"; };
+		F398187913061714004A1763 /* TDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F398183A13061713004A1763 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398184213061714004A1763 /* UIKit.framework in Frameworks */,
+				F398184413061714004A1763 /* Foundation.framework in Frameworks */,
+				F398184613061714004A1763 /* CoreGraphics.framework in Frameworks */,
+				F398184813061714004A1763 /* QuartzCore.framework in Frameworks */,
+				F398184A13061714004A1763 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F398186813061714004A1763 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398186D13061714004A1763 /* UIKit.framework in Frameworks */,
+				F398186E13061714004A1763 /* Foundation.framework in Frameworks */,
+				F398186F13061714004A1763 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F398183213061713004A1763 = {
+			isa = PBXGroup;
+			children = (
+				F398184B13061714004A1763 /* TD */,
+				F398187013061714004A1763 /* TDTests */,
+				F398184013061714004A1763 /* Frameworks */,
+				F398183E13061714004A1763 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F398183E13061714004A1763 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F398183D13061714004A1763 /* TD.app */,
+				F398186C13061714004A1763 /* TDTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F398184013061714004A1763 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F398184113061714004A1763 /* UIKit.framework */,
+				F398184313061714004A1763 /* Foundation.framework */,
+				F398184513061714004A1763 /* CoreGraphics.framework */,
+				F398184713061714004A1763 /* QuartzCore.framework */,
+				F398184913061714004A1763 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F398184B13061714004A1763 /* TD */ = {
+			isa = PBXGroup;
+			children = (
+				F398185413061714004A1763 /* TDAppDelegate.h */,
+				F398185513061714004A1763 /* TDAppDelegate.m */,
+				F398185713061714004A1763 /* MainWindow.xib */,
+				F398185A13061714004A1763 /* Shader.fsh */,
+				F398185C13061714004A1763 /* Shader.vsh */,
+				F398185E13061714004A1763 /* EAGLView.h */,
+				F398185F13061714004A1763 /* EAGLView.m */,
+				F398186113061714004A1763 /* TDViewController.h */,
+				F398186213061714004A1763 /* TDViewController.m */,
+				F398186413061714004A1763 /* TDViewController.xib */,
+				F398184C13061714004A1763 /* Supporting Files */,
+			);
+			path = TD;
+			sourceTree = "<group>";
+		};
+		F398184C13061714004A1763 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F398184D13061714004A1763 /* TD-Info.plist */,
+				F398184E13061714004A1763 /* InfoPlist.strings */,
+				F398185113061714004A1763 /* TD-Prefix.pch */,
+				F398185213061714004A1763 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F398187013061714004A1763 /* TDTests */ = {
+			isa = PBXGroup;
+			children = (
+				F398187713061714004A1763 /* TDTests.h */,
+				F398187913061714004A1763 /* TDTests.m */,
+				F398187113061714004A1763 /* Supporting Files */,
+			);
+			path = TDTests;
+			sourceTree = "<group>";
+		};
+		F398187113061714004A1763 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F398187213061714004A1763 /* TDTests-Info.plist */,
+				F398187313061714004A1763 /* InfoPlist.strings */,
+				F398187613061714004A1763 /* TDTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F398183C13061713004A1763 /* TD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F398187D13061714004A1763 /* Build configuration list for PBXNativeTarget "TD" */;
+			buildPhases = (
+				F398183913061713004A1763 /* Sources */,
+				F398183A13061713004A1763 /* Frameworks */,
+				F398183B13061713004A1763 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TD;
+			productName = TD;
+			productReference = F398183D13061714004A1763 /* TD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F398186B13061714004A1763 /* TDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F398188013061714004A1763 /* Build configuration list for PBXNativeTarget "TDTests" */;
+			buildPhases = (
+				F398186713061714004A1763 /* Sources */,
+				F398186813061714004A1763 /* Frameworks */,
+				F398186913061714004A1763 /* Resources */,
+				F398186A13061714004A1763 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TDTests;
+			productName = TDTests;
+			productReference = F398186C13061714004A1763 /* TDTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F398183413061713004A1763 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F398183713061713004A1763 /* Build configuration list for PBXProject "TD" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F398183213061713004A1763;
+			productRefGroup = F398183E13061714004A1763 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F398183C13061713004A1763 /* TD */,
+				F398186B13061714004A1763 /* TDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F398183B13061713004A1763 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398185013061714004A1763 /* InfoPlist.strings in Resources */,
+				F398185913061714004A1763 /* MainWindow.xib in Resources */,
+				F398185B13061714004A1763 /* Shader.fsh in Resources */,
+				F398185D13061714004A1763 /* Shader.vsh in Resources */,
+				F398186613061714004A1763 /* TDViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F398186913061714004A1763 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398187513061714004A1763 /* InfoPlist.strings in Resources */,
+				F398187813061714004A1763 /* TDTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F398186A13061714004A1763 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F398183913061713004A1763 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398185313061714004A1763 /* main.m in Sources */,
+				F398185613061714004A1763 /* TDAppDelegate.m in Sources */,
+				F398186013061714004A1763 /* EAGLView.m in Sources */,
+				F398186313061714004A1763 /* TDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F398186713061714004A1763 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F398187A13061714004A1763 /* TDTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F398184E13061714004A1763 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F398184F13061714004A1763 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F398185713061714004A1763 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F398185813061714004A1763 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		F398186413061714004A1763 /* TDViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F398186513061714004A1763 /* en */,
+			);
+			name = TDViewController.xib;
+			sourceTree = "<group>";
+		};
+		F398187313061714004A1763 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F398187413061714004A1763 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F398187B13061714004A1763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F398187C13061714004A1763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		F398187E13061714004A1763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TD/TD-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "TD/TD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F398187F13061714004A1763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TD/TD-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "TD/TD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F398188113061714004A1763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TD.app/TD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TDTests/TDTests-Prefix.pch";
+				INFOPLIST_FILE = "TDTests/TDTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F398188213061714004A1763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TD.app/TD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TDTests/TDTests-Prefix.pch";
+				INFOPLIST_FILE = "TDTests/TDTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F398183713061713004A1763 /* Build configuration list for PBXProject "TD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F398187B13061714004A1763 /* Debug */,
+				F398187C13061714004A1763 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F398187D13061714004A1763 /* Build configuration list for PBXNativeTarget "TD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F398187E13061714004A1763 /* Debug */,
+				F398187F13061714004A1763 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F398188013061714004A1763 /* Build configuration list for PBXNativeTarget "TDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F398188113061714004A1763 /* Debug */,
+				F398188213061714004A1763 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F398183413061713004A1763 /* Project object */;
+}
