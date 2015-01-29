@@ -1,0 +1,128 @@
+// !$*UTF8*$!
+{
+	F35899D91322BEB20013D882 /* Blash */ = {
+		activeExec = 0;
+		executables = (
+			F3D09ED71384D1D5007F0BC5 /* Blash */,
+		);
+	};
+	F35899F81322BEB20013D882 /* BlashTests */ = {
+		activeExec = 0;
+	};
+	F398183413061713004A1763 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = F3D09ED61384D1D5007F0BC5 /* Space Base */;
+		activeTarget = F398183C13061713004A1763 /* Space Base */;
+		codeSenseManager = F3D09EEC1384D1D9007F0BC5 /* Code sense */;
+		executables = (
+			F3D09ED61384D1D5007F0BC5 /* Space Base */,
+			F3D09ED71384D1D5007F0BC5 /* Blash */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 327471573;
+			PBXWorkspaceStateSaveDate = 327471573;
+		};
+		sourceControlManager = F3D09EEB1384D1D9007F0BC5 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	F398183C13061713004A1763 /* Space Base */ = {
+		activeExec = 0;
+		executables = (
+			F3D09ED61384D1D5007F0BC5 /* Space Base */,
+		);
+	};
+	F398186B13061714004A1763 /* Space BaseTests */ = {
+		activeExec = 0;
+	};
+	F3D09ED61384D1D5007F0BC5 /* Space Base */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Space Base";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	F3D09ED71384D1D5007F0BC5 /* Blash */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Blash;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	F3D09EEB1384D1D9007F0BC5 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	F3D09EEC1384D1D9007F0BC5 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

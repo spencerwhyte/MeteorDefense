@@ -1,0 +1,27 @@
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m: In function '-[NewAsteroidData init]':
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:18: error: 'data' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:18: error: (Each undeclared identifier is reported only once
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:18: error: for each function it appears in.)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m: In function '-[NewAsteroidData draw]':
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:58: warning: implicit declaration of function 'glPushMatrix'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:61: warning: implicit declaration of function 'glScalef'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:62: warning: implicit declaration of function 'glVertexPointer'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:62: error: 'GL_FLOAT' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:62: error: 'data' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:63: warning: implicit declaration of function 'glTexCoordPointer'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:64: warning: implicit declaration of function 'glDrawArrays'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:64: error: 'GL_TRIANGLES' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:68: error: 'shouldHighlight' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:69: warning: implicit declaration of function 'glDisable'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:69: error: 'GL_TEXTURE_2D' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:70: warning: implicit declaration of function 'glDisableClientState'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:70: error: 'GL_TEXTURE_COORD_ARRAY' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:71: warning: implicit declaration of function 'glColor4f'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:72: error: 'GLfloat' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:73: error: 'GL_LINE_LOOP' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:74: warning: implicit declaration of function 'glEnable'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:75: warning: implicit declaration of function 'glEnableClientState'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:76: error: 'GL_VERTEX_ARRAY' undeclared (first use in this function)
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:87: warning: implicit declaration of function 'glPopMatrix'
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m: At top level:
+/Users/markcorbelli/Dropbox/Meteor Defense (Mark)/Builds/TD(1.3)/TD/NewAsteroidData.m:96: error: no declaration of property 'shouldHighlight' found in the interface

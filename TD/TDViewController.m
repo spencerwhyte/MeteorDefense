@@ -1,3 +1,4 @@
+
 //
 //  TDViewController.m
 //  TD
@@ -25,6 +26,10 @@ enum {
     NUM_ATTRIBUTES
 };
 
+
+#define USE_DEPTH_BUFFER 1
+#define DEGREES_TO_RADIANS(__ANGLE) ((__ANGLE) / 180.0 * M_PI)
+
 @interface TDViewController ()
 @property (nonatomic, retain) EAGLContext *context;
 @property (nonatomic, assign) CADisplayLink *displayLink;
@@ -38,31 +43,93 @@ enum {
 
 @synthesize animating, context, displayLink;
 
-- (void)awakeFromNib
-{
-    EAGLContext *aContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    
-    if (!aContext) {
-        aContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if(gameState ==1){
+        UITouch * t  =[touches anyObject];
+        CGPoint p =  [t locationInView: self.view];
+        float x = p.x ;
+        float y = p.y;
+        [currentGameWorld touchesBeganX:x andY:y];
+    }else if(gameState == 0){
+        for(UITouch * t in touches){
+            CGPoint p =  [t locationInView: self.view];
+            float x = p.x ;
+            float y = p.y;
+            [Menu touchesBeganX:x andY:y];
+        }
     }
-    
-    if (!aContext)
-        NSLog(@"Failed to create ES context");
-    else if (![EAGLContext setCurrentContext:aContext])
-        NSLog(@"Failed to set ES context current");
-    
-	self.context = aContext;
-	[aContext release];
-	
-    [(EAGLView *)self.view setContext:context];
-    [(EAGLView *)self.view setFramebuffer];
-    
-    if ([context API] == kEAGLRenderingAPIOpenGLES2)
-        [self loadShaders];
-    
-    animating = FALSE;
-    animationFrameInterval = 1;
-    self.displayLink = nil;
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if(gameState ==1){
+        UITouch * t  =[touches anyObject];
+        CGPoint p =  [t locationInView: self.view];
+        float x = p.x ;
+        float y = p.y;
+        [currentGameWorld touchesMovedX:x andY:y];
+    }else if(gameState == 0){
+        for(UITouch * t in touches){
+            CGPoint p =  [t locationInView: self.view];
+            float x = p.x ;
+            float y = p.y;
+            [Menu touchesMovedX:x andY:y];
+        }
+    }
+}
+- (void)movieDidFinish:(NSNotification*)aNotification{
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    gameState  = 0;
+	[Audio playSound:@"Ambiento"];
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+	int previousGameState = gameState;
+    if(gameState ==1){
+        UITouch * t  =[touches anyObject];
+        CGPoint p =  [t locationInView: self.view];
+        float x = p.x ;
+        float y = p.y;
+        [currentGameWorld touchesEndedX:x andY:y];
+	}else if(gameState == 0){
+        for(UITouch * t in touches){
+            CGPoint p =  [t locationInView: self.view];
+            float x = p.x ;
+            float y = p.y;
+            
+            
+            
+            gameState = [Menu touchesEndedX:x andY:y];
+            if(previousGameState !=gameState && gameState == 4){
+				[Audio stopSound:@"Ambiento"];
+					NSURL * someURL =[[NSBundle mainBundle] URLForResource:@"tutorial" withExtension:@"m4v"];
+					[PlayVideoViewController playMovieAtURL:someURL inView:self.view withDelegate:self];
+					
+            }
+            
+            if(gameState == 2){
+                [ScoreBoard showScoreBoard:self.view];
+            }
+        }
+  
+    }else if(gameState == 3){
+        gameState = 0;
+    }
+}
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+    if(gameState ==1){
+        UITouch * t  =[touches anyObject];
+        CGPoint p =  [t locationInView: self.view];
+        float x = p.x ;
+        float y = p.y;
+        [currentGameWorld touchesCancelledX:x andY:y];
+    }else if(gameState == 0){
+        for(UITouch * t in touches){
+            CGPoint p =  [t locationInView: self.view];
+            float x = p.x ;
+            float y = p.y;
+            [Menu touchesCancelledX:x andY:y];
+        }
+    }
 }
 
 - (void)dealloc
@@ -92,7 +159,8 @@ enum {
 - (void)viewWillAppear:(BOOL)animated
 {
     [self startAnimation];
-    
+    [ScoreBoard setInstance:sb];
+
     [super viewWillAppear:animated];
 }
 
@@ -111,7 +179,7 @@ enum {
         glDeleteProgram(program);
         program = 0;
     }
-
+    
     // Tear down context.
     if ([EAGLContext currentContext] == context)
         [EAGLContext setCurrentContext:nil];
@@ -141,6 +209,7 @@ enum {
 
 - (void)startAnimation
 {
+    
     if (!animating) {
         CADisplayLink *aDisplayLink = [[UIScreen mainScreen] displayLinkWithTarget:self selector:@selector(drawFrame)];
         [aDisplayLink setFrameInterval:animationFrameInterval];
@@ -149,80 +218,138 @@ enum {
         
         animating = TRUE;
     }
+    
 }
 
 - (void)stopAnimation
 {
     if (animating) {
+        [currentGameWorld pause];
         [self.displayLink invalidate];
         self.displayLink = nil;
         animating = FALSE;
     }
 }
 
+int gotName;
+
+
+
+
 - (void)drawFrame
 {
+   
     [(EAGLView *)self.view setFramebuffer];
-    
-    // Replace the implementation of this method to do your own custom drawing.
-    static const GLfloat squareVertices[] = {
-        -0.5f, -0.33f,
-        0.5f, -0.33f,
-        -0.5f,  0.33f,
-        0.5f,  0.33f,
-    };
-    
-    static const GLubyte squareColors[] = {
-        255, 255,   0, 255,
-        0,   255, 255, 255,
-        0,     0,   0,   0,
-        255,   0, 255, 255,
-    };
-    
-    static float transY = 0.0f;
-    
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+ 
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
     glClear(GL_COLOR_BUFFER_BIT);
-    
-    if ([context API] == kEAGLRenderingAPIOpenGLES2) {
-        // Use shader program.
-        glUseProgram(program);
-        
-        // Update uniform value.
-        glUniform1f(uniforms[UNIFORM_TRANSLATE], (GLfloat)transY);
-        transY += 0.075f;	
-        
-        // Update attribute values.
-        glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-        glEnableVertexAttribArray(ATTRIB_VERTEX);
-        glVertexAttribPointer(ATTRIB_COLOR, 4, GL_UNSIGNED_BYTE, 1, 0, squareColors);
-        glEnableVertexAttribArray(ATTRIB_COLOR);
-        
-        // Validate program before drawing. This is a good check, but only really necessary in a debug build.
-        // DEBUG macro must be defined in your debug configurations if that's not already the case.
-#if defined(DEBUG)
-        if (![self validateProgram:program]) {
-            NSLog(@"Failed to validate program: %d", program);
-            return;
+        if(gameState ==1){ // Game
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity(); 
+      
+            if([Score hasLost]){
+                if(gotName == 0){
+				//	NSURL * someURL =[[NSBundle mainBundle] URLForResource:@"MDdone" withExtension:@"m4v"];
+				//	[PlayVideoViewController playMovieAtURL:someURL inView:self.view withDelegate:self];
+                    gotName = 2;
+					if(gotName ==2){
+					//	[Audio stopSound:@"Ambiento"];	
+					//	[Audio cleanUpOpenAL];
+					}
+                    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:   [  [ NSString alloc] initWithFormat:@"Score: %d\n Please enter your name:", [Score getScore]]  message:@"This gets covered" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+                    UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 62.0, 260.0, 25.0)];
+					myTextField.text = [NSString stringWithFormat:@"Apollo"];
+                    nameTextField = myTextField;
+                    [myTextField setBackgroundColor:[UIColor whiteColor]];
+                    [myAlertView addSubview:myTextField];
+                    // myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
+                    ///[myAlertView setTransform:myTransform];
+                    [myAlertView show];
+                    [myAlertView release];
+                    
+                }
+                if(gotName == 3){
+                    gotName = 0;
+                    
+                    gameState = 2; // Go to score screen
+                    [currentGameWorld reset];
+                    [ScoreBoard showScoreBoard:self.view];
+                    
+                    
+                }
+				if(gotName == 4){
+                    gotName = 0;
+                    
+                    gameState = 3; // Go to score screen
+                    [currentGameWorld reset];
+                   // [ScoreBoard showScoreBoard:self.view];
+                    
+                    
+                }
+				if(gotName == 5){
+                    gotName = 0;
+                    
+                    gameState = 4; // Go to score screen
+                    [currentGameWorld reset];
+					// [ScoreBoard showScoreBoard:self.view];
+                    
+                    
+                }
+                if(gotName == 1){
+					
+                    gameState = 2; // Go to score screen
+                    gotName =0;
+                    [ScoreBoard registerScore:[Score getScore] forName:[nameTextField text]];
+                    [currentGameWorld reset];
+                    [ScoreBoard showScoreBoard:self.view];
+					//}
+                }
+                
+                
+            }else{
+                if(!subMenuMode){
+                    [currentGameWorld update]; // Update the game world
+                    [currentGameWorld draw]; // Draw the game world
+                    [ParticleSystem draw]; // Draw the particle system
+
+				}else{
+                    [currentGameWorld draw]; // Draw the game world
+                    [SBMenu draw];
+				}
+			/*	if(!SBsubMenuMode){
+					[currentGameWorld update]; // Update the game world
+					[currentGameWorld draw]; // Draw the game world
+					[ParticleSystem draw]; // Draw the particle system
+					} else if (SBsubMenuMode){
+						[currentGameWorld draw];
+						[SubMenu draw];
+			
+					}*/
+			}
+        }else if(gameState ==0){ // Menu
+           [Menu draw];
+		}else if(gameState ==3){ // credits
+				[Credit draw];
+		}else if(gameState ==4){ // credits
+
+        }else if(gameState == 2){ // Score board
+            if([ScoreBoard doneScoreBoard]){
+                [ScoreBoard hideScoreBoard:self.view];
+                gameState = 0;
+            }
         }
-#endif
-    } else {
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-        glTranslatef(0.0f, (GLfloat)(sinf(transY)/2.0f), 0.0f);
-        transY += 0.075f;
-        
-        glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-        glEnableClientState(GL_VERTEX_ARRAY);
-        glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-        glEnableClientState(GL_COLOR_ARRAY);
+    [(EAGLView *)self.view presentFramebuffer];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        gotName =3;
+    }
+    if(buttonIndex == 1){
+        gotName = 1;
     }
     
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    [(EAGLView *)self.view presentFramebuffer];
 }
 
 - (BOOL)compileShader:(GLuint *)shader type:(GLenum)type file:(NSString *)file
@@ -308,6 +435,71 @@ enum {
     
     return TRUE;
 }
+
+- (void)awakeFromNib
+{
+    EAGLContext *aContext;
+    
+        aContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+    
+    if (!aContext) {
+        aContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+    }
+    
+    if (!aContext)
+        NSLog(@"Failed to create ES context");
+    else if (![EAGLContext setCurrentContext:aContext])
+        NSLog(@"Failed to set ES context current");
+    
+	self.context = aContext;
+	[aContext release];
+	
+    [(EAGLView *)self.view setContext:context];
+    [(EAGLView *)self.view setFramebuffer];
+    
+    if ([context API] == kEAGLRenderingAPIOpenGLES2)
+        [self loadShaders];
+    
+    animating = FALSE;
+    animationFrameInterval = 1;
+    self.displayLink = nil;
+    
+    currentGameWorld = [[GameWorld alloc] initWithWidth:self.view.bounds.size.width andHeight:self.view.bounds.size.height];
+    [ParticleSystem load];
+    [Menu load];
+    [Credit load];
+	[Sounds loadsounds];
+    gameState = 0;
+    
+    /*
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     //glRotatef(-90.0, 0.0, 0.0, 1.0);
+     const GLfloat zNear = 0.1, zFar = 430.0, fieldOfView = 60.0;
+     GLfloat size;
+     glEnable(GL_DEPTH_TEST);
+     glMatrixMode(GL_PROJECTION);
+     size = zNear * tanf(DEGREES_TO_RADIANS(fieldOfView) / 2.0);
+     CGRect rect = self.view.bounds;
+     glFrustumf( -size / (rect.size.height / rect.size.width),size / (rect.size.height / rect.size.width), -size, size , zNear, zFar);
+     */
+    
+    CGRect rect = self.view.bounds;
+    glMatrixMode (GL_PROJECTION);
+    glLoadIdentity();
+    //glOrtho (0, rect.size.width , rect.size.height , 0, 0, 1);
+    glOrthof(0, rect.size.width , rect.size.height, 0, 0, 1);
+    glMatrixMode (GL_MODELVIEW);
+    gotName = 0;
+    subMenuMode = false;
+    [Audio playSound:@"Ambiento"];
+	//NSURL * someURL =[[NSBundle mainBundle] URLForResource:@"MDdone" withExtension:@"m4v"];
+	//[PlayVideoViewController playMovieAtURL:someURL inView:self.view withDelegate:self];
+	//videoDone=true;
+//	gameState = 1000;
+	
+}
+
 
 - (BOOL)loadShaders
 {
