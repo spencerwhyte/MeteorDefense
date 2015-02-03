@@ -10,11 +10,6 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>appIcon.png</string>
-		<string>iconRetina.png</string>
-	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.spencerwhyte.MeteorDefense</string>
 	<key>CFBundleInfoDictionaryVersion</key>

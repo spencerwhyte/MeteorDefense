@@ -61,6 +61,7 @@
 		F3095E5F1310574D00CD3CED /* manualControlButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = F3095E5D1310574D00CD3CED /* manualControlButton2.png */; };
 		F3095E62131410D000CD3CED /* ElectricFence.m in Sources */ = {isa = PBXBuildFile; fileRef = F3095E61131410D000CD3CED /* ElectricFence.m */; };
 		F30F311C130B8EA300DC172C /* SatelliteBeam.png in Resources */ = {isa = PBXBuildFile; fileRef = F30F311B130B8EA300DC172C /* SatelliteBeam.png */; };
+		F31385DB1A80605300CD4078 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31385DA1A80605300CD4078 /* Images.xcassets */; };
 		F31A6404131D45EE0094A15E /* fusionCoil.png in Resources */ = {isa = PBXBuildFile; fileRef = F31A6403131D45EE0094A15E /* fusionCoil.png */; };
 		F31A6406131D46060094A15E /* main1Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F31A6405131D46060094A15E /* main1Menu.png */; };
 		F31A6408131D461C0094A15E /* electricFence.png in Resources */ = {isa = PBXBuildFile; fileRef = F31A6407131D461C0094A15E /* electricFence.png */; };
@@ -201,6 +202,7 @@
 		F3095E60131410D000CD3CED /* ElectricFence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricFence.h; sourceTree = "<group>"; };
 		F3095E61131410D000CD3CED /* ElectricFence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricFence.m; sourceTree = "<group>"; };
 		F30F311B130B8EA300DC172C /* SatelliteBeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SatelliteBeam.png; sourceTree = "<group>"; };
+		F31385DA1A80605300CD4078 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Space Base/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		F31A6403131D45EE0094A15E /* fusionCoil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fusionCoil.png; sourceTree = "<group>"; };
 		F31A6405131D46060094A15E /* main1Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main1Menu.png; sourceTree = "<group>"; };
 		F31A6407131D461C0094A15E /* electricFence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = electricFence.png; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				F393DB621384E60400659587 /* ScoreBoard.h */,
 				BA2B245C134E0D6800FBF039 /* finalComet.h */,
 				BA2B245D134E0D6800FBF039 /* finalComet.m */,
+				F31385DA1A80605300CD4078 /* Images.xcassets */,
 			);
 			name = "Space Base";
 			path = TD;
@@ -581,7 +584,7 @@
 			name = BlashTests;
 			productName = BlashTests;
 			productReference = F343EB28132F1D3D00C5F1D9 /* BlashTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		F398183C13061713004A1763 /* Space Base */ = {
 			isa = PBXNativeTarget;
@@ -616,7 +619,7 @@
 			name = "Space BaseTests";
 			productName = TDTests;
 			productReference = F398186C13061714004A1763 /* Space BaseTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -685,6 +688,7 @@
 				F3095E42130CFEEF00CD3CED /* buttonBackground.png in Resources */,
 				F3095E44130CFF2800CD3CED /* constructButton.png in Resources */,
 				F3095E46130CFF2E00CD3CED /* constructButton2.png in Resources */,
+				F31385DB1A80605300CD4078 /* Images.xcassets in Resources */,
 				F3095E5E1310574D00CD3CED /* manualControlButton.png in Resources */,
 				F3095E5F1310574D00CD3CED /* manualControlButton2.png in Resources */,
 				F3302DED13158B2500833A39 /* rocketLauncherTemp.png in Resources */,
@@ -991,20 +995,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Spencer Whyte (GM96RFL42Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Spencer Whyte (GM96RFL42Q)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TD/TD-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "TD/Space Base-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "Space Base";
-				PROVISIONING_PROFILE = "072ad501-d497-47e3-81b1-a4fcd0e036a4";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "072ad501-d497-47e3-81b1-a4fcd0e036a4";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv6 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1013,19 +1021,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Spencer Whyte (GM96RFL42Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Spencer Whyte (GM96RFL42Q)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TD/TD-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "TD/Space Base-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "Space Base";
-				PROVISIONING_PROFILE = "072ad501-d497-47e3-81b1-a4fcd0e036a4";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "072ad501-d497-47e3-81b1-a4fcd0e036a4";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv6 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
